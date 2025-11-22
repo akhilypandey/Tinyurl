@@ -1,4 +1,101 @@
-# TinyLink
+🌐 TinyLink – Minimal URL Shortener (Next.js + Postgres)
+
+TinyLink is a clean, production-ready URL shortening web app built with Next.js App Router, Tailwind CSS, Prisma, and Postgres (Neon). It supports link creation, custom codes, redirects with click tracking, deletion, and a polished dashboard UI.
+
+Built as a take-home assignment with a focus on clean architecture, testability, and UI/UX clarity.
+
+✨ Key Features
+🔗 URL Shortening
+
+Create short links for any valid URL
+
+Optional custom short codes ([A-Za-z0-9]{6,8})
+
+Proper validation and meaningful error messages
+
+🚀 Redirect + Analytics
+
+Visiting /:code issues a 302 redirect
+
+Automatically increments click count
+
+Stores last clicked timestamp
+
+🗂️ Dashboard
+
+Add new links
+
+View all links in a sortable / searchable table
+
+Copy short URLs
+
+Delete links
+
+Clean, responsive UI with Tailwind
+
+📊 Stats Page
+
+/code/:code shows details for one link:
+
+Short URL
+
+Target URL
+
+Total clicks
+
+Last clicked time
+
+Created at timestamp
+
+♻️ API Endpoints (REST)
+
+POST /api/links — create link (409 on duplicate)
+
+GET /api/links — list all links
+
+GET /api/links/:code — get stats
+
+DELETE /api/links/:code — delete link
+
+❤️ Healthcheck
+
+GET /healthz → { ok: true, version: "1.0" }
+
+🛠️ Tech Stack
+
+Next.js (App Router)
+
+React 18
+
+TypeScript
+
+Tailwind CSS
+
+Neon Postgres (or any Postgres)
+
+Prisma ORM
+
+Vercel Deployment
+
+📦 Running Locally
+npm install
+cp .env.example .env   # Fill in your database URL
+npx prisma migrate dev
+npm run dev
+
+🌍 Live Demo
+
+(You will add your Vercel link here)
+
+📜 Project Requirements
+
+This project implements the specification for:
+
+Stable routes (/, /:code, /code/:code, /healthz)
+
+Automated testing compatibility
+
+Clean UI/UX (loaders, empty state, errors, responsiveness)
 
 TinyLink is a minimal URL shortener built as a take-home assignment. It provides:
 
